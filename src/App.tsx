@@ -26,7 +26,7 @@ function App() {
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
-      backgroundImage: "url('/permata-hatiku-bg.png')",
+      backgroundImage: "url('./permata-hatiku-bg.png')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',

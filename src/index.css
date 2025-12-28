@@ -44,7 +44,7 @@ a:hover {
 }
 
 html {
-  background-image: url('/permata-hatiku-bg.png');
+  /* background-image: url('/permata-hatiku-bg.png'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
