@@ -30,10 +30,14 @@ function App() {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
-      backgroundAttachment: 'fixed'
+      backgroundAttachment: window.innerWidth > 768 ? 'fixed' : 'scroll' // Better mobile performance
     }}>
       <Navbar setPage={setPage} />
-      <div style={{ flex: 1, paddingTop: "120px" }}>
+      <div style={{
+        flex: 1,
+        paddingTop: "120px",
+        padding: window.innerWidth <= 768 ? "120px 1rem 0 1rem" : "120px 2rem 0 2rem" // Responsive padding
+      }}>
         {renderPage()}
       </div>
       <Footer />

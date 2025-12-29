@@ -7,11 +7,33 @@ function Services() {
         { title: "Service 3", description: "under maintainance" },
     ];
 
+    const isMobile = window.innerWidth <= 768;
+
     return (
-        <div style={{ padding: "2rem" }}>
-            <h2 style={{ textAlign: "center", color: "#ffffff" }}>Our Services</h2>
-            <div style={{ display: "flex", gap: "1rem", justifyContent: "center", marginTop: "1rem" }}>
-                {services.map((s, index) => <ServiceCard key={index} {...s} />)}
+        <div style={{
+            padding: isMobile ? "1rem" : "2rem",
+            textAlign: "center"
+        }}>
+            <h2 style={{
+                textAlign: "center",
+                color: "#ffffff",
+                fontSize: isMobile ? "1.5rem" : "2rem",
+                marginBottom: "2rem"
+            }}>
+                Our Services
+            </h2>
+            <div style={{
+                display: "flex",
+                gap: isMobile ? "1rem" : "1rem",
+                justifyContent: "center",
+                marginTop: "1rem",
+                flexWrap: "wrap",
+                flexDirection: isMobile ? "column" : "row",
+                alignItems: isMobile ? "center" : "flex-start"
+            }}>
+                {services.map((s, index) => (
+                    <ServiceCard key={index} {...s} />
+                ))}
             </div>
         </div>
     );
