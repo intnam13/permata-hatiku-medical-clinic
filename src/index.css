@@ -31,6 +31,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* About Page Colors */
+  --about-main-title-color: #ffffff;
+  /* Pure white */
+  --about-section-header-color: #2E7BD6;
+  /* Clinic blue */
+  --about-body-text-color: #ffffff;
+  /* Pure white */
+  --about-accent-color: #2E7BD6;
+  /* Clinic blue */
 }
 
 a {
@@ -50,17 +60,32 @@ html {
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
+
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* min-width: 320px;
+  min-height: 100vh; */
   background-color: transparent;
   font-size: 16px;
   /* Base font size for mobile */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure all page content has transparent backgrounds */
+*,
+*::before,
+*::after {
+  background-color: transparent !important;
 }
 
 #root {
@@ -133,17 +158,4 @@ button:focus-visible {
   }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #ffffff;
-    background-color: transparent;
-  }
-
-  a:hover {
-    color: #e0e0e0;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-}
+/* Removed light color scheme preferences to maintain our dark theme with background image */

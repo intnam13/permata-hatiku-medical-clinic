@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ImageSlideshow from "./ImageSlideshow";
 
 interface HeroProps {
     setPage: (page: "home" | "services" | "appointment" | "success") => void;
@@ -10,22 +11,48 @@ function Hero({ setPage }: HeroProps) {
 
     const isMobile = window.innerWidth <= 768;
 
+    // Sample medical-themed images for the slideshow
+    const slideshowImages = [
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80", // Modern hospital
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80", // Doctor with patient
+        "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80", // Medical equipment
+        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80", // Healthcare professionals
+        "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80", // Medical consultation
+        "https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"  // Hospital interior
+    ];
+
     return (
         <div style={{
             display: "flex",
-            justifyContent: isMobile ? "center" : "flex-end",
+            flexDirection: isMobile ? "column" : "row",
+            justifyContent: "center",
             alignItems: "center",
             minHeight: isMobile ? "calc(100vh - 120px)" : "calc(100vh - 200px)",
             padding: isMobile ? "2rem 1rem" : "3rem",
-            backgroundColor: "transparent",
-            color: "#ffffff",
-            textAlign: isMobile ? "center" : "left"
+            gap: isMobile ? "2rem" : "2rem",
+            backgroundColor: "transparent"
         }}>
+            {/* Image Slideshow - Left Side */}
             <div style={{
+                flex: isMobile ? "none" : "1",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: isMobile ? "100%" : "50%",
+                maxWidth: isMobile ? "100%" : "650px",
+                order: isMobile ? -1 : 0 // Show slideshow first on mobile, then text
+            }}>
+                <ImageSlideshow images={slideshowImages} interval={5000} />
+            </div>
+
+            {/* Text Content - Right Side */}
+            <div style={{
+                flex: isMobile ? "none" : "1",
                 textAlign: isMobile ? "center" : "left",
+                width: "100%",
                 maxWidth: isMobile ? "100%" : "600px",
-                paddingRight: isMobile ? "0" : "2rem",
-                width: "100%"
+                color: "#ffffff",
+                padding: isMobile ? "0 1rem" : "0 0 0 3rem"
             }}>
                 <h2 style={{
                     color: "#ffffff",
