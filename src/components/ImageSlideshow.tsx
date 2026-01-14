@@ -63,8 +63,10 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({ images, interval = 4000
             backgroundImage: `url(${image})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            backgroundRepeat: "no-repeat"
+            backgroundRepeat: "no-repeat",
+            backgroundColor: index === currentIndex ? "transparent" : "rgba(255, 255, 255, 0.1)"
           }}
+          onError={() => console.log(`Failed to load image: ${image}`)}
         />
       ))}
 

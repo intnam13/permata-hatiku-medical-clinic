@@ -1,5 +1,7 @@
 import { useState } from "react";
 import ImageSlideshow from "./ImageSlideshow";
+import doctor1 from "../assets/dr-permata-hatiku.jpeg";
+import doctor2 from "../assets/dr-putri-nurul-muthia.jpeg";
 
 interface HeroProps {
     setPage: (page: "home" | "services" | "appointment" | "success") => void;
@@ -13,12 +15,8 @@ function Hero({ setPage }: HeroProps) {
 
     // Sample medical-themed images for the slideshow
     const slideshowImages = [
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80", // Modern hospital
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80", // Doctor with patient
-        "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80", // Medical equipment
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80", // Healthcare professionals
-        "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80", // Medical consultation
-        "https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"  // Hospital interior
+        doctor1, // Dr. Permata Hatiku
+        doctor2  // Dr. Putri Nurul Muthia
     ];
 
     return (
